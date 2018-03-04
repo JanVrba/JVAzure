@@ -1,0 +1,66 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "adminPassword": {
+            "value": "Dev0p$+2016123"
+        },
+        "adminUserName": {
+            "value": "jvrba"
+        },
+        "authenticationType": {
+            "value": "password"
+        },
+        "dnsPrefix": {
+            "value": "jvazurejenkins"
+        },
+        "publicIPName": {
+            "value": "jenkins-pip"
+        },
+        "publicIPNewOrExisting": {
+            "value": "new"
+        },
+        "publicIPResourceGroup": {
+            "value": "jvazurejenkins"
+        },
+        "storageAccountType": {
+            "value": "Standard_LRS"
+        },
+        "vmName": {
+            "value": "jvazurejenkins"
+        },
+        "vmSize": {
+            "value": "Standard_D1_v2"
+        },
+        "location": {
+            "value": "westeurope"
+        },
+        "jenkinsReleaseType": {
+            "value": "LTS"
+        },
+        "spType": {
+            "value": "msi"
+        },
+        "enableCloudAgents": {
+            "value": "no"
+        },
+        "vnetName": {
+            "value": "jenkins-vnet"
+        },
+        "vnetResourceGroup": {
+            "value": "jvazurejenkins"
+        },
+        "vnetAddressPrefix": {
+            "value": "10.1.0.0/16"
+        },
+        "vnetNewOrExisting": {
+            "value": "new"
+        },
+        "subnetName": {
+            "value": "jenkins"
+        },
+        "subnetAddressPrefix": {
+            "value": "10.1.0.0/24"
+        }
+    }
+}
