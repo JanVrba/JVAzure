@@ -100,9 +100,11 @@ else{
 
 # Start the deployment
 Write-Host "Starting deployment...";
-Get-AzureRmMarketplaceTerms -Publisher "cleardb" -Product "databases" -Name "[parameters('cdbSku')]" |  Set-AzureRmMarketplaceTerms -Accept
+
 if(Test-Path $parametersFilePath) {
     New-AzureRmResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateFile $templateFilePath -TemplateParameterFile $parametersFilePath;
+    Get-AzureRmMarketplaceTerms -Publisher "cleardb" -Product "databases" -Name "Venus" |  Set-AzureRmMarketplaceTerms -Accept;
 } else {
     New-AzureRmResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateFile $templateFilePath;
+    Get-AzureRmMarketplaceTerms -Publisher "cleardb" -Product "databases" -Name "Venus" |  Set-AzureRmMarketplaceTerms -Accept;
 }
