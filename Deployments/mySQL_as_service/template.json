@@ -1,0 +1,31 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "cdbName": {
+            "type": "string"
+        },
+        "cdbLocation": {
+            "type": "string"
+        },
+        "cdbSku": {
+            "type": "string"
+        }
+    },
+    "resources": [
+        {
+            "apiVersion": "2014-04-01",
+            "name": "[parameters('cdbName')]",
+            "location": "[parameters('cdbLocation')]",
+            "tags": {
+                "provision_source": "RMS"
+            },
+            "type": "SuccessBricks.ClearDB/databases",
+            "plan": {
+                "name": "[parameters('cdbSku')]",
+                "product": "databases",
+                "publisher": "cleardb"
+            }
+        }
+    ]
+}
